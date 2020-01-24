@@ -7250,6 +7250,8 @@ form#login {
   right: 20px; }
   form#login .forgot {
     font-size: .85rem; }
+  form#login .form-check {
+    margin-top: -10px; }
 
 .application legend {
   font-size: 1.1rem;
