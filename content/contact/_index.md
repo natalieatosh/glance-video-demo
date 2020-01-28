@@ -4,4 +4,5 @@ type: "contact"
 layout: single
 bgImage: "agent.jpg"
 ---
-{{< sc_gcode-notloggedin >}}
+{{< sc_gcode-loggedin >}}
+{{< sc_salesforce >}}

@@ -1,6 +1,6 @@
 ---
 title: "Helping you move your financial goals forward"
-type: "about"
+date: 2019-12-30T19:43:38-05:00
 layout: single
 draft: false
 bgImage: "about-us.jpg"
