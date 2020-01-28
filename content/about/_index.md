@@ -5,6 +5,6 @@ layout: single
 draft: false
 bgImage: "about-us.jpg"
 ---
-{{< sc_gcode-notloggedin >}}
+{{< sc_gcode-loggedin >}}
 {{< sc_about >}}
 {{< sc_salesforce >}}
