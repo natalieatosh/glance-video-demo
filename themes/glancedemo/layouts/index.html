@@ -16,76 +16,71 @@ data-presence="api" agentvideo=1 charset="UTF-8"></script>
     else signinbtn.textContent = "Log out";    
 }
 </script>
+
 <form id="login">
-  <h2 id="welcometag">Welcome</h2>
-  <div class="form-group">
-    <input type="userName" value="Jennifer Smith" class="form-control" id="userName" aria-describedby="userHelp" placeholder="Username">
-  </div>
-  <div class="form-group">
-    <input type="password" value="••••••••" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-  </div>
-  <a href="/accounts"><button onclick="change()" type="button" id="loginjen" class="btn btn-primary mt-2">Sign in</button></a>
-  <div class="forgot mt-1"><a href="#">Forgot ID/Password? »</a><br><a href="/accounts">Open an Account »</a></div>
+    <h2 id="welcometag">Welcome</h2>
+    <div class="form-group">
+        <input type="userName" value="Jennifer Smith" class="form-control" id="userName" aria-describedby="userHelp" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <input type="password" value="••••••••" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+    </div>
+    <a href="/accounts"><button onclick="change()" type="button" id="loginjen" class="btn btn-primary mt-2">Sign in</button></a>
+    <div class="forgot mt-1"><a href="#">Forgot ID/Password? »</a><br><a href="/accounts">Open an Account »</a></div>
 </form>
 
 <div class="jumbotron homepage-banner">
   <div class="container banner-container mt-5">
       <h1 class="hp-headline">Let us help you find your dream home today</h1>
       <p class="lead">Our home loans are designed to meet your specific home financing needs.</p>
-      <a class="btn btn-primary btn-lg" href="application" role="button">Get Prequalified »</a>
+      <a class="btn btn-primary btn-lg mb-4" href="application" role="button">Get Prequalified »</a>
   </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-  <ul class="list-group list-group-horizontal justify-content-center mb-5 hp-tabs">
-    <li class="list-group-item border-0">Mortgage Rates</li>
-    <li class="list-group-item border-0">Refinance Rates</li>
-    <li class="list-group-item border-0">Home Equity Rates</li>
-    <li class="list-group-item border-0">Calculators</li>
-    <li class="list-group-item border-0">FAQs</li>
-  </ul>
-  </div></div>
-</div>
-
-<div class="container sub-nav text-center">
-  <div class="row">
-    <div class="col-lg mb-3">
-      <h2 class="tagline">Let us help you find the loan that’s right for you.</h2>
+    <div class="row mb-4">
+        <div class="col">Mortgage Rates</div>
+        <div class="col">Refinance Rates</div>
+        <div class="col">Home Equity Rates</div>
+        <div class="col">Calculators</div>
     </div>
-  </div>
-
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="/img/mortgage_housekey.jpg" alt="Mortgages">
-      <div class="card-body">
-        <h4 class="card-title">Buy a Home</h4>
-        <p class="card-text">Our home loans are designed for your specific home financing needs. Get the tools you need.
-        </p>
-        <a href="/application" class="btn btn-primary btn-lg" href="mortgages" role="button">Start Online »</a>
-      </div>
+    <div class="container sub-nav text-center">
+        <div class="row">
+            <div class="col-lg mb-3">
+                <h2 class="tagline">Let us help you find the loan that’s right for you.</h2>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="/img/mortgage_housekey.jpg" alt="Mortgages">
+                <div class="card-body">
+                    <h4 class="card-title">Buy a Home</h4>
+                    <p class="card-text">Our home loans are designed for your specific home financing needs. Get the tools you need.
+                    </p>
+                    <a href="/application" class="btn btn-primary btn-lg" href="mortgages" role="button">Start Online »</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="/img/refinance_calculation.jpg" alt="Refinaning">
+                <div class="card-body">
+                    <h4 class="card-title">Refinancing</h4>
+                    <p class="card-text">Refinance your mortgage to lower your monthly mortgage payment or cash out existing equity in your home.</p>
+                    <a href="/application" class="btn btn-primary btn-lg" href="#" role="button">Apply Online »</a>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="/img/homeequity_roofing.jpg" alt="Home Equity">
+                <div class="card-body">
+                    <h4 class="card-title">Home Equity</h4>
+                    <p class="card-text">Leverage the equity in your home to access cash to pay for major expenses.</p>
+                    <a href="/application" class="btn btn-primary btn-lg" href="#" role="button">Apply Online »</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="/img/refinance_calculation.jpg" alt="Refinaning">
-      <div class="card-body">
-        <h4 class="card-title">Refinancing</h4>
-        <p class="card-text">Refinance your mortgage to lower your monthly mortgage payment or cash out existing equity in your home.</p>
-        <a href="/application" class="btn btn-primary btn-lg" href="#" role="button">Apply Online »</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="/img/homeequity_roofing.jpg" alt="Home Equity">
-      <div class="card-body">
-        <h4 class="card-title">Home Equity</h4>
-        <p class="card-text">Leverage the equity in your home to access cash to pay for major expenses.</p>
-        <a href="/application" class="btn btn-primary btn-lg" href="#" role="button">Apply Online »</a>
-      </div>
-    </div>
-</div>
 </div>
 <style type='text/css'>
 .embeddedServiceHelpButton .helpButton .uiButton {
