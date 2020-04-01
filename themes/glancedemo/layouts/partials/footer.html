@@ -2,10 +2,16 @@
 <footer id="sticky-footer" class="page-footer font-small pt-4">
 
   <!-- Footer Elements -->
+  <script>
+   jQuery( "#start-cobrowse-randomKey" ).click(function(evt) {
+      GLANCE.Cobrowse.Visitor.startSession({sessionKey:"GLANCE_KEYTYPE_RANDOM"});
+      });
+  </script>
   <div class="container text-center"><!-- Call to action -->
         <a href="/application"><h4 class="mb-1">Get Prequalified »</h4></a>
-        <a href="javascript:;" glance_button="startSession" class="green-border"><span>Cobrowse with Agent</span></a>
-  </div>
+        <a href="#" id="start-cobrowse-randomKey" onclick="return false;" class="green-border"><span>Cobrowse with Agent</span></a>
+<!--         <a href="javascript:;" glance_button="startSession" class="green-border"><span>Cobrowse with Agent</span></a>
+ -->  </div>
   <!-- Footer Elements -->
 
   <!-- Copyright -->
