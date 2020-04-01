@@ -7315,7 +7315,8 @@ iframe {
   border: none;
   /* Reset default border */
   height: 100vh;
-  /* Viewport-relative units */ }
+  /* Viewport-relative units */
+  width: 100vw; }
 
 .account-card .card-title {
   font-weight: 400; }
