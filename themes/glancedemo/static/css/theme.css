@@ -7309,6 +7309,14 @@ form#login-mobile {
   .pdf-guide a {
     color: #fff; }
 
+iframe {
+  display: block;
+  /* iframes are inline by default */
+  border: none;
+  /* Reset default border */
+  height: 100vh;
+  /* Viewport-relative units */ }
+
 .account-card .card-title {
   font-weight: 400; }
 
