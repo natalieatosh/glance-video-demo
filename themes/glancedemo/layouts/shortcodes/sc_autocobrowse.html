@@ -1,0 +1,23 @@
+<!-- Customize groupid and site -->
+<script id="glance-cobrowse" 
+        src="https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=8757&site=production" 
+        data-groupid="8757"
+        data-site="production" 
+        charset="UTF-8"></script>
+
+<script defer>
+
+    function getParam(name) {
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(window.location.href);
+        if (results == null) 
+            return ""; 
+        else 
+            return results[1];
+    }
+    
+    var sessionkey = getParam("sessionkey");
+    
+    GLANCE.Cobrowse.Visitor.showTerms({ sessionKey : sessionkey });
+ 
+</script>
