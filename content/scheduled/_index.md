@@ -5,5 +5,4 @@ layout: single
 draft: false
 ---
 {{< sc_autocobrowse >}}
-{{< sc_accounts >}}
 {{< sc_salesforce >}}
