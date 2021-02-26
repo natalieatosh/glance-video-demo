@@ -2,9 +2,9 @@
 
 {{ partial "jumbotron" . }}
 <script id="glance-cobrowse" type="text/javascript"
-src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=21380&site=production"
+src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=8757&site=production"
 data-inputevents='{"ctrl-13":"showButton","shift-13":"startSession"}'
-data-groupid="21380" data-site="production"
+data-groupid="8757" data-site="production"
 data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" agentvideo=1 charset="UTF-8"></script>
 
 <div class="container">
@@ -79,7 +79,7 @@ function messageListener(e) {
           console.log('Chat Start - visitorid=' + visitorid);
 
           visitor = new GLANCE.Presence.Visitor({
-            groupid: 21380 ,
+            groupid: 8757 ,
             visitorid: visitorid
           });
 
@@ -96,7 +96,7 @@ function messageListener(e) {
           console.log('Chat Restart - visitorid=' + visitorid);
 
           visitor = new GLANCE.Presence.Visitor({
-            groupid: 21380 ,
+            groupid: 8757 ,
             visitorid: visitorid
           });
 
