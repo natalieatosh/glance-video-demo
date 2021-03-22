@@ -1,9 +1,9 @@
 {{ define "main"}}
 <script id="glance-cobrowse" type="text/javascript"
-src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=8757&site=production"
+src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=21371&site=production"
 data-inputevents='{"ctrl-13":"showButton","shift-13":"startSession"}'
-data-groupid="8757" data-site="production"
-data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" agentvideo=1 charset="UTF-8" data-cookiedomain="beta-sales.onrender.com"></script>
+data-groupid="21371" data-site="production"
+data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" agentvideo=1 charset="UTF-8" data-cookiedomain="glance-video-demo-group-id-21371.onrender.com"></script>
     <main id="main">
       <div>
        <h1 id="title">Sorry page not found.</h1>
@@ -23,20 +23,20 @@ data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" agentvide
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 var initESW = function(gslbBaseURL) {
-    embedded_svc.settings.displayHelpButton = true; 
-    embedded_svc.settings.language = ''; 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    embedded_svc.settings.displayHelpButton = true;
+    embedded_svc.settings.language = '';
+
+
+
+
+
+
+
+
+
+
+
+
     embedded_svc.settings.enabledFeatures = ['LiveAgent'];
     embedded_svc.settings.entryFeature = 'LiveAgent';
     var visitor;
@@ -48,7 +48,7 @@ var initESW = function(gslbBaseURL) {
         }
         if (e.data) {
             if (e.data.data) {
-                
+
                 if (e.data.data.event == 'chasitorChatEstablished') {
                     if (e.data.data.chasitorData) {
                         var visitorid = e.data.data.chasitorData.chatKey.replace(/-/g, '');
@@ -60,7 +60,7 @@ var initESW = function(gslbBaseURL) {
                         visitor.connect();
                     }
                 }
-                
+
                 else if (e.data.method == 'liveagent.restored') {
                     if (e.data.data.chasitorSessionData) {
                         var visitorid =
@@ -73,14 +73,14 @@ var initESW = function(gslbBaseURL) {
                         visitor.connect();
                     }
                 }
-                
+
                 else if (e.data.data.event == 'chasitorIdleTimeout') {
                     if (visitor) {
                         visitor.disconnect();
                         GLANCE.Cobrowse.Visitor.stopSession();
                     }
                 }
-                
+
                 else if (e.data.data.event == 'chasitorAgentChatEnded' || e.data.data.event == 'chasitorChasitorChatEnded') {
                     if (visitor) {
                         console.log('Chat End');
