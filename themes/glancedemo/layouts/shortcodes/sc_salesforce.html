@@ -32,6 +32,78 @@
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
+var visitor;
+
+function messageListener(e) {
+
+  if (typeof e.data === 'string' && e.data.indexOf('startSession') == 0) {
+    var key = e.data.split(':')[1];
+
+    GLANCE.Cobrowse.Visitor.startSession(key);
+  }
+
+  if (e.data) {
+    if (e.data.data) {
+      // Chat started.
+      if (e.data.data.event == 'chasitorChatEstablished') {
+        if (e.data.data.chasitorData) {
+          var visitorid = e.data.data.chasitorData.chatKey.replace(/-/g, '');
+
+          console.log('Chat Start - visitorid=' + visitorid);
+
+          visitor = new GLANCE.Presence.Visitor({
+            groupid: 21371,
+            visitorid: visitorid
+          });
+
+          visitor.presence();
+        }
+      }
+
+      // Chat restarted.
+      else if (e.data.method == 'liveagent.restored') {
+        if (e.data.data.chasitorSessionData) {
+          var visitorid =
+            e.data.data.chasitorSessionData.chatKey.replace(/-/g, '');
+
+          console.log('Chat Restart - visitorid=' + visitorid);
+
+          visitor = new GLANCE.Presence.Visitor({
+            groupid: 21371,
+            visitorid: visitorid
+          });
+
+          visitor.presence();
+        }
+      }
+
+      // Chat timed out.
+      else if (e.data.data.event == 'chasitorIdleTimeout') {
+        if (visitor) {
+          visitor.disconnect();
+          GLANCE.Cobrowse.Visitor.stopSession();
+        }
+      }
+
+      // Chat ended.
+      else if (e.data.data.event == 'chasitorAgentChatEnded' || e.data.data.event == 'chasitorChasitorChatEnded') {
+        if (visitor) {
+          console.log('Chat End');
+
+          visitor.disconnect();
+          GLANCE.Cobrowse.Visitor.stopSession();
+        }
+      }
+    }
+  }
+}
+
+if (window.addEventListener) {
+  addEventListener('message', messageListener, false);
+} else {
+  attachEvent('onmessage', messageListener);
+}
+
 		embedded_svc.init(
 			'https://sodiumdemo.my.salesforce.com',
 			'https://glancetest.force.com',
