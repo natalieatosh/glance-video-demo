@@ -1,23 +1,24 @@
 <!-- Customize groupid and site -->
-<script id="glance-cobrowse" 
-        src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=21371&site=production" 
+<script id="glance-cobrowse"
+        src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=21371&site=production"
         data-groupid="21371"
-        data-site="production" 
+        data-site="production"
         charset="UTF-8"></script>
+        <script src="https://www.glancecdn.net/cobrowse/styles/21371/glancepilot.js"></script>
 
 <script defer>
 
     function getParam(name) {
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
         var results = regex.exec(window.location.href);
-        if (results == null) 
-            return ""; 
-        else 
+        if (results == null)
+            return "";
+        else
             return results[1];
     }
-    
+
     var sessionkey = getParam("sessionkey");
-    
+
     GLANCE.Cobrowse.Visitor.showTerms({ sessionKey : sessionkey });
- 
+
 </script>
