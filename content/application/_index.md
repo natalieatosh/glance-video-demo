@@ -11,6 +11,9 @@ draft: false
 When you connect with us, you'll be one step closer to owning a new home. After filling out this application, a mortgage consultant will be in touch to answer your questions about getting prequalified and discuss your home financing needs.
 
 Please complete the fields below and click "Continue."
+<<<<<<< HEAD
 
 {{< sc_start-application >}}
 {{< sc_salesforce >}}
+=======
+>>>>>>> fd52818a9abfc27f1d09ff38ece696ce5e63e748
