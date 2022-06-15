@@ -5,7 +5,8 @@ layout: single
 draft: false
 ---
 
-## Apply for a Global home mortgage. ##
+## Apply for a Global home mortgage.
+
 
 When you connect with us, you'll be one step closer to owning a new home. After filling out this application, a mortgage consultant will be in touch to answer your questions about getting prequalified and discuss your home financing needs.
 
