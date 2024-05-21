@@ -1,3 +1,8 @@
+<script id="glance-cobrowse" type="text/javascript"
+src="https://beta.glancecdn.net/cobrowse/CobrowseJS.ashx?group=21371&site=production"
+data-inputevents='{"ctrl-13":"showButton","shift-13":"startSession"}'
+data-groupid="21371" data-site="production"
+data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" data-cookiedomain="glance-video-demo-group-id-21371.onrender.com" agentvideo=1 charset="UTF-8"></script>
 <div class="row">
     <div class="col-12 col-md-9 mb-5">
 <div class="card shadow border-0 application">
@@ -13,20 +18,21 @@
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
+
                         <label for="input">First name</label>
-                        <input type="firstName" class="form-control" id="inputfn" placeholder="First Name"> <small id="emailHelp" class="form-text text-muted">Your legal name</small>
+                        <input type="firstName" class="form-control glance_controllable" id="inputfn" placeholder="First Name"> <small id="emailHelp" class="form-text text-muted">Your legal name</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="middleName">Middle name(optional)</label>
-                        <input type="Middle name" class="form-control" id="middleName" placeholder="Middle name">
+                        <input type="Middle name" class="form-control glance_controllable" id="middleName" placeholder="Middle name" class="glance_controllable">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Last name</label>
-                        <input type="firstName" class="form-control" id="inputEmail4" placeholder="First Name"> <small id="emailHelp" class="form-text text-muted">Your legal name</small>
+                        <input type="firstName" class="form-control glance_controllable" id="inputEmail4" placeholder="First Name" class="glance_controllable"> <small id="emailHelp" class="form-text text-muted">Your legal name</small>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 glance_controllable" >
                         <label for="middleName">Suffix (optional)</label>
                         <select type="suffix" class="form-control" id="exampleFormControlSelect1">
                             <option>None</option>
@@ -47,13 +53,13 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="ssnumber">Social Security number</label>
-                        <input type="Middle name" class="form-control glance_masked" id="ssNumber" placeholder="XXX-XX-XXXX"><small id="ssn" class="form-text text-muted">Your SSN is needed to verify your identity</small>
+                        <input type="Middle name" class="glance_masked" id="ssNumber" placeholder="XXX-XX-XXXX"><small id="ssn" class="form-text text-muted">Your SSN is needed to verify your identity</small>
                     </div>
                 </div>
             </form>
 
             <form>
-                <div class="form-row">
+                <div>
                     <div class="form-group col-md-6">
                         <label for="email">Email Address</label>
                         <div class="form-row">
@@ -106,10 +112,10 @@
 
         </div>
         <hr>
-        <legend class="mt-4">Home Address</legend>
+        <legend>Home Address</legend>
         <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="text" class="glance_controllable" id="inputAddress" placeholder="1234 Main St">
         </div>
         <div class="form-group">
             <label for="inputAddress2">Address 2</label>
@@ -213,7 +219,7 @@
         </div>
         <a href="/"><button type="button" class="btn btn-secondary btn-md">Cancel</button></a>
         <a href="/application"><button type="button" class="btn btn-primary btn-md">« Back</button></a>
-        <a href="/application/step3-application"><button type="button" class="btn btn-success btn-md float-right">Continue »</button></a>
+        <a href="/application/step3-application"><button type="button" class="btn btn-success btn-md float-right glance_controllable">Continue »</button></a>
         </form>
     </div>
 </div>

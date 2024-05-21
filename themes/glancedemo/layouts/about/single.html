@@ -24,11 +24,18 @@ data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" data-cook
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
 <input type=hidden name="oid" value="00D4x000006srqB">
 <input type=hidden name="retURL" value="https://glance-video-demo-group-id-21371.onrender.com/">
+=======
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<input type=hidden name="oid" value="00D4x000006srqB">
+<input type=hidden name="retURL" value="https://ww2.glance.net/">
+>>>>>>> 7d0b28abc7192affa685cc9bd8acca8c7bcdd782
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
@@ -41,9 +48,19 @@ data-presence="on" data-visitorid="75001234" data-ws="beta.glance.net" data-cook
 
 <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
 
+<<<<<<< HEAD
 <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
 
 Glance Visitor ID:<input  id="00N4x00000LzS5P" maxlength="255" name="00N4x00000LzS5P" size="20" type="text" /><br>
+=======
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+
+<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+
+<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+>>>>>>> 7d0b28abc7192affa685cc9bd8acca8c7bcdd782
 
 <input type="submit" name="submit">
 
@@ -58,129 +75,18 @@ Glance Visitor ID:<input  id="00N4x00000LzS5P" maxlength="255" name="00N4x00000L
 	}
 </style>
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-var visitor;
-
-function messageListener(e) {
-
-  if (typeof e.data === 'string' && e.data.indexOf('startSession') == 0) {
-    var key = e.data.split(':')[1];
-
-    GLANCE.Cobrowse.Visitor.startSession(key);
-  }
-
-  if (e.data) {
-    if (e.data.data) {
-      // Chat started.
-      if (e.data.data.event == 'chasitorChatEstablished') {
-        if (e.data.data.chasitorData) {
-          var visitorid = e.data.data.chasitorData.chatKey.replace(/-/g, '');
-
-          console.log('Chat Start - visitorid=' + visitorid);
-
-          visitor = new GLANCE.Presence.Visitor({
-            groupid: 21371,
-            visitorid: visitorid
-          });
-
-          visitor.presence();
-        }
-      }
-
-      // Chat restarted.
-      else if (e.data.method == 'liveagent.restored') {
-        if (e.data.data.chasitorSessionData) {
-          var visitorid =
-            e.data.data.chasitorSessionData.chatKey.replace(/-/g, '');
-
-          console.log('Chat Restart - visitorid=' + visitorid);
-
-          visitor = new GLANCE.Presence.Visitor({
-            groupid: 21371,
-            visitorid: visitorid
-          });
-
-          visitor.presence();
-        }
-      }
-
-      // Chat timed out.
-      else if (e.data.data.event == 'chasitorIdleTimeout') {
-        if (visitor) {
-          visitor.disconnect();
-          GLANCE.Cobrowse.Visitor.stopSession();
-        }
-      }
-
-      // Chat ended.
-      else if (e.data.data.event == 'chasitorAgentChatEnded' || e.data.data.event == 'chasitorChasitorChatEnded') {
-        if (visitor) {
-          console.log('Chat End');
-
-          visitor.disconnect();
-          GLANCE.Cobrowse.Visitor.stopSession();
-        }
-      }
-    }
-  }
-}
-
-if (window.addEventListener) {
-  addEventListener('message', messageListener, false);
-} else {
-  attachEvent('onmessage', messageListener);
-}
-
-		embedded_svc.init(
-			'https://sodiumdemo.my.salesforce.com',
-			'https://glancetest.force.com',
-			gslbBaseURL,
-			'00D4x000006srqB',
-			'support',
-			{
-				baseLiveAgentContentURL: 'https://c.la3-c1-ia4.salesforceliveagent.com/content',
-				deploymentId: '5724x000000QG0G',
-				buttonId: '5734x000000QHQZ',
-				baseLiveAgentURL: 'https://d.la3-c1-ia4.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'support',
-				isOfflineSupportEnabled: true
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://sodiumdemo.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
+<script type="text/javascript">
+  (function(w, d, x, id){
+    s=d.createElement('script');
+    s.src='https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js';
+    s.async=1;
+    s.id=id;
+    d.getElementsByTagName('head')[0].appendChild(s);
+    w[x] =  w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) };
+  })(window, document, 'amazon_connect', '9afb25e6-9929-40e8-ba7d-20659217a6d4');
+  amazon_connect('styles', { iconType: 'CHAT_VOICE', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456'} });
+  amazon_connect('snippetId', 'QVFJREFIZ2JTNzdvNlZBdTFZSVJkT0xad3RDb08wM2NZamVYWno2UE4rbHpYL2JuRlFFazZiUzFMOWJIcCtBeDFhVUFGVUlyQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNNCt4OUU3K2QreUZoQzJBS0FnRVFnQ3NEN3VmOTFsNW1wRCtVZXJpNjhmenRvNXFleXJIbnhBNjQ4VjdHWk8rek0wdjVOcTJQcHBHVDNKRms6OmNwcWtzZkZZOUdEYlVGcXg5a3VjQWFXQmpBRllGTUlwSHFucDU1VlVmTVlJaWJ3VHNVaW9hS2ZOVkxEMVRHZXVJZ25CRzU5UU0wN1hKTUFnbkFHZTN5b2VNazVoM0JrL3RnTlJ3emNlTUlRTnNjQjdIeXpaNmprenFsdmJMOVI1V1M0d2srK3MzNTFUTktRdGV0eFdQdlBKR0hCRmxPMD0=');
+  amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown' ]);
 </script>
 
 
